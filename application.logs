@@ -1,0 +1,1058 @@
+
+EXAMPLES
+  $ heroku apps
+  === My Apps
+  example
+  example2
+
+  === Collaborated Apps
+  theirapp   other@owner.name
+
+COMMANDS
+  apps:create     creates a new app
+  apps:destroy    permanently destroy an app
+  apps:errors     view app errors
+  apps:favorites  list favorited apps
+  apps:info       show detailed app information
+  apps:join       add yourself to a team app
+  apps:leave      remove yourself from a team app
+  apps:lock       prevent team members from joining an app
+  apps:open       open the app in a web browser
+  apps:rename     rename an app
+  apps:stacks     show the list of available stacks
+  apps:transfer   transfer applications to another user or team
+  apps:unlock     unlock an app so any team member can join
+
+[sdeshpande@LDN-34290 emote-app]:$ heroku apps config
+ ›   Error: Unexpected argument: config
+ ›   See more help with --help
+[sdeshpande@LDN-34290 emote-app]:$
+
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ heroku config
+=== emote-app Config Vars
+DATABASE_URL:          postgres://fjrmfrtzrseijz:uNkQbTi2af4anlM0vV5m_KSBAf@ec2-107-21-106-52.compute-1.amazonaws.com:5432/d5djd2q5ggoehi
+JAVA_OPTS:             -Xmx384m -Xss512k -XX:+UseCompressedOops
+NEW_RELIC_LICENSE_KEY: d87ecee05a24afc678867c53c2276fb9f33e21ea
+NEW_RELIC_LOG:         stdout
+PATH:                  .jdk/bin:.sbt_home/bin:/usr/local/bin:/usr/bin:/bin
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ heroku
+CLI to interact with Heroku
+
+VERSION
+  heroku/7.59.2 darwin-x64 node-v12.21.0
+
+USAGE
+  $ heroku [COMMAND]
+
+COMMANDS
+  access          manage user access to apps
+  addons          tools and services for developing, extending, and operating your app
+  apps            manage apps on Heroku
+  auth            check 2fa status
+  authorizations  OAuth authorizations
+  autocomplete    display autocomplete installation instructions
+  buildpacks      scripts used to compile apps
+  certs           a topic for the ssl plugin
+  ci              run an application test suite on Heroku
+  clients         OAuth clients on the platform
+  config          environment variables of apps
+  container       Use containers to build and deploy Heroku apps
+  domains         custom domains for apps
+  drains          forward logs to syslog or HTTPS
+  features        add/remove app features
+  git             manage local git repository for app
+  help            display help for heroku
+  keys            add/remove account ssh keys
+  labs            add/remove experimental features
+  local           run Heroku app locally
+  logs            display recent log output
+  maintenance     enable/disable access to app
+  members         manage organization members
+  notifications   display notifications
+  orgs            manage organizations
+  pg              manage postgresql databases
+  pipelines       manage pipelines
+  plugins         list installed plugins
+  ps              Client tools for Heroku Exec
+  psql            open a psql shell to the database
+  redis           manage heroku redis instances
+  regions         list available regions for deployment
+  releases        display the releases for an app
+  reviewapps      manage reviewapps in pipelines
+  run             run a one-off process inside a Heroku dyno
+  sessions        OAuth sessions
+  spaces          manage heroku private spaces
+  status          status of the Heroku platform
+  teams           manage teams
+  update          update the Heroku CLI
+  webhooks        list webhooks on an app
+
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ cd ..
+[sdeshpande@LDN-34290 heroku]:$ cd emote-app-2022
+[sdeshpande@LDN-34290 emote-app-2022]:$ heroku buildpacks
+=== emote-app Buildpack URL
+heroku/gradle
+[sdeshpande@LDN-34290 emote-app-2022]:$
+[sdeshpande@LDN-34290 emote-app-2022]:$
+[sdeshpande@LDN-34290 emote-app-2022]:$ cd ..
+[sdeshpande@LDN-34290 heroku]:$ cd emote-app
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/cli/browser/dd79d4f5-31dc-4feb-9737-65d450d1ebaa?requestor=SFMyNTY.g2gDbQAAAAwyLjIxOS4yMTkuMTZuBgBwA9cHfwFiAAFRgA.IcF_QrP8cCj01M1-XFzSIY0eDfYabrhYmqZExho8iaU
+Logging in... done
+Logged in as sanketd367@gmail.com
+[sdeshpande@LDN-34290 emote-app]:$ heroku buildpacks
+=== emote-app Buildpack URL
+heroku/gradle
+[sdeshpande@LDN-34290 emote-app]:$ ls -la
+total 144
+drwxr-xr-x@ 22 sdeshpande  979269291    704 17 Feb 12:33 .
+drwxr-xr-x   6 sdeshpande  979269291    192 17 Feb 13:19 ..
+-rw-r--r--@  1 sdeshpande  979269291  10244 17 Feb 13:19 .DS_Store
+drwxr-xr-x  15 sdeshpande  979269291    480 17 Feb 12:43 .git
+-rw-r--r--   1 sdeshpande  979269291   2484 17 Feb 12:29 .gitignore
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 .groovy
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 Git emote.app
+-rw-r--r--   1 sdeshpande  979269291     76 17 Feb 12:29 Procfile
+-rw-r--r--   1 sdeshpande  979269291    627 17 Feb 12:29 README.md
+-rw-r--r--   1 sdeshpande  979269291    279 17 Feb 12:29 application.properties
+-rw-r--r--   1 sdeshpande  979269291   5604 17 Feb 12:29 emote.iml
+-rw-r--r--   1 sdeshpande  979269291  13895 17 Feb 12:29 emote.ipr
+-rw-r--r--   1 sdeshpande  979269291  16906 17 Feb 12:29 emote.iws
+drwxr-xr-x  10 sdeshpande  979269291    320 17 Feb 12:31 grails-app
+drwxr-xr-x   5 sdeshpande  979269291    160 17 Feb 12:29 projectFilesBackup
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 projectFilesBackup1
+drwxr-xr-x   4 sdeshpande  979269291    128 17 Feb 12:29 sass
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 scripts
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 server
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 src
+drwxr-xr-x   3 sdeshpande  979269291     96 17 Feb 12:29 test
+drwxr-xr-x  16 sdeshpande  979269291    512 17 Feb 12:31 web-app
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ heroku apps:info
+=== emote-app
+Addons:         newrelic:wayne
+Auto Cert Mgmt: false
+Collaborators:  nitin_karmuse@yahoo.com
+Dynos:          web: 1
+Git URL:        https://git.heroku.com/emote-app.git
+Owner:          sanketd367@gmail.com
+Pipeline:       deploy - production
+Region:         us
+Repo Size:      11 MB
+Slug Size:      91 MB
+Stack:          cedar (next build will use heroku-20)
+Web URL:        https://emote-app.herokuapp.com/
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ heroku apps:info
+ ▸    Couldn't find that app.
+[sdeshpande@LDN-34290 emote-app]:$ heroku apps:info
+=== emote-app
+Auto Cert Mgmt: false
+Dynos:
+Git URL:        https://git.heroku.com/emote-app.git
+Owner:          sanketd367@gmail.com
+Region:         eu
+Repo Size:      0 B
+Slug Size:      0 B
+Stack:          heroku-20
+Web URL:        https://emote-app.herokuapp.com/
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ heroku buildpacks
+=== emote-app Buildpack URL
+https://github.com/sanketd367/heroku-buildpack-grails.git
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$
+[sdeshpande@LDN-34290 emote-app]:$ git push heroku master
+Enumerating objects: 6292, done.
+Counting objects: 100% (6292/6292), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (1730/1730), done.
+Writing objects: 100% (6292/6292), 9.82 MiB | 854.00 KiB/s, done.
+Total 6292 (delta 3798), reused 6284 (delta 3793), pack-reused 0
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-20 stack
+remote: -----> Using buildpack: https://github.com/sanketd367/heroku-buildpack-grails.git
+remote: -----> Grails app detected
+remote: -----> Grails 2.2.1 app detected
+remote:        WARNING: The Grails buildpack is currently in Beta.
+remote: -----> Installing OpenJDK 1.7...done
+remote: -----> Installing Grails 2.2.1.....
+remote: -----> Done
+remote: -----> Executing grails -Divy.default.ivy.user.dir=/tmp/codon/tmp/cache compile --non-interactive
+remote:
+remote:        | Loading Grails 2.2.1
+remote:        | Configuring classpath
+remote:        | Downloading: ivy-1.0.1.RELEASE.xml
+remote:        | Downloading: ivy-2.4.1.xml
+remote:        | Downloading: ivy-1.1.xml
+remote:        | Downloading: ivy-1.45.xml
+remote:        | Downloading: ivy-1.45.xml
+remote:        | Downloading: ivy-1.0.xml
+remote:        | Downloading: ivy-2.2.0.xml
+remote:        | Downloading: ivy-1.2.1.xml
+remote:        | Downloading: ivy-3.2.3.xml
+remote:        | Downloading: ivy-2.7.1.xml
+remote:        | Downloading: ivy-1.6.2.xml
+remote:        | Downloading: ivy-1.6.2.xml
+remote:        | Downloading: ivy-1.8.2.xml
+remote:        | Downloading: ivy-1.8.2.xml
+remote:        | Downloading: ivy-1.8.2.xml
+remote:        | Downloading: ivy-1.7.1.xml
+remote:        | Downloading: tomcat-2.2.1.pom
+remote:        | Downloading: ivy-7.0.30.xml
+remote:        | Downloading: ivy-3.7.2.xml
+remote:        | Downloading: ivy-7.0.30.xml
+remote:        | Downloading: ivy-7.0.30.xml
+remote:        | Downloading: ivy-7.0.30.xml
+remote:        | Downloading: ivy-7.0.30.xml
+remote:        | Downloading: org.springframework.uaa.client-1.0.1.RELEASE.jar
+remote:        | Downloading: protobuf-java-2.4.1.jar
+remote:        | Downloading: json-simple-1.1.jar
+remote:        | Downloading: bcpg-jdk15-1.45.jar
+remote:        | Downloading: bcprov-jdk15-1.45.jar
+remote:        | Downloading: jline-1.0.jar
+remote:        | Downloading: ivy-2.2.0.jar
+remote:        | Downloading: jansi-1.2.1.jar
+remote:        | Downloading: jna-3.2.3.jar
+remote:        | Downloading: serializer-2.7.1.jar
+remote:        | Downloading: grails-docs-2.2.1.jar
+remote:        | Downloading: grails-bootstrap-2.2.1.jar
+remote:        | Downloading: grails-scripts-2.2.1.jar
+remote:        | Downloading: slf4j-api-1.6.2.jar
+remote:        | Downloading: jcl-over-slf4j-1.6.2.jar
+remote:        | Downloading: ant-1.8.2.jar
+remote:        | Downloading: ant-launcher-1.8.2.jar
+remote:        | Downloading: ant-junit-1.8.2.jar
+remote:        | Downloading: ant-trax-1.7.1.jar
+remote:        | Downloading: tomcat-2.2.1.zip
+remote:        | Downloading: grails-plugin-tomcat-2.2.1.jar
+remote:        | Downloading: tomcat-embed-core-7.0.30.jar
+remote:        | Downloading: ecj-3.7.2.jar
+remote:        | Downloading: tomcat-embed-jasper-7.0.30.jar
+remote:        | Downloading: tomcat-embed-logging-log4j-7.0.30.jar
+remote:        | Downloading: tomcat-catalina-ant-7.0.30.jar
+remote:        | Downloading: tomcat-embed-logging-juli-7.0.30.jar
+remote:        :: problems summary ::
+remote:        :::: ERRORS
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/tomcat/2.2.1/tomcat-2.2.1-sources.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/tomcat/2.2.1/tomcat-2.2.1-src.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/tomcat/2.2.1/tomcat-2.2.1-javadoc.jar
+remote:        | Downloading: ivy-2.0.7.xml
+remote:        | Downloading: ivy-1.8.3.xml
+remote:        | Downloading: ivy-1.0.xml
+remote:        | Downloading: ivy-1.3.1.xml
+remote:        | Downloading: ivy-1.0.xml
+remote:        | Downloading: ivy-1.3.1.xml
+remote:        | Downloading: ivy-1.5.xml
+remote:        | Downloading: ivy-3.2.1.xml
+remote:        | Downloading: ivy-2.1.xml
+remote:        | Downloading: ivy-2.6.xml
+remote:        | Downloading: ivy-1.1.xml
+remote:        | Downloading: ivy-1.0.1.Final.xml
+remote:        | Downloading: ivy-2.4.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: ivy-1.1.5.RELEASE.xml
+remote:        | Downloading: ivy-1.1.5.RELEASE.xml
+remote:        | Downloading: ivy-1.1.5.RELEASE.xml
+remote:        | Downloading: ivy-1.6.10.xml
+remote:        | Downloading: ivy-1.6.10.xml
+remote:        | Downloading: ivy-2.2.xml
+remote:        | Downloading: ivy-3.1.xml
+remote:        | Downloading: ivy-1.2.2.xml
+remote:        | Downloading: ivy-2.0.8.xml
+remote:        | Downloading: ivy-1.4.xml
+remote:        | Downloading: ivy-1.5.6.xml
+remote:        | Downloading: ivy-1.3.164.xml
+remote:        | Downloading: ivy-1.1.2.xml
+remote:        | Downloading: ivy-1.1.4c.xml
+remote:        | Downloading: ivy-2.4.6.xml
+remote:        | Downloading: ivy-1.2.16.xml
+remote:        | Downloading: ivy-1.6.2.xml
+remote:        | Downloading: jquery-1.8.3.pom
+remote:        | Downloading: resources-1.1.6.pom
+remote:        | Downloading: database-migration-1.3.2.pom
+remote:        | Downloading: ivy-2.0.5.xml
+remote:        | Downloading: ivy-4.10.xml
+remote:        | Downloading: ivy-3.1.4.RELEASE.xml
+remote:        | Downloading: groovy-all-2.0.7.jar
+remote:        | Downloading: commons-beanutils-1.8.3.jar
+remote:        | Downloading: commons-el-1.0.jar
+remote:        | Downloading: commons-validator-1.3.1.jar
+remote:        | Downloading: aopalliance-1.0.jar
+remote:        | Downloading: concurrentlinkedhashmap-lru-1.3.1.jar
+remote:        | Downloading: commons-codec-1.5.jar
+remote:        | Downloading: commons-collections-3.2.1.jar
+remote:        | Downloading: commons-io-2.1.jar
+remote:        | Downloading: commons-lang-2.6.jar
+remote:        | Downloading: jta-1.1.jar
+remote:        | Downloading: hibernate-jpa-2.0-api-1.0.1.Final.jar
+remote:        | Downloading: sitemesh-2.4.jar
+remote:        | Downloading: grails-core-2.2.1.jar
+remote:        | Downloading: grails-crud-2.2.1.jar
+remote:        | Downloading: grails-hibernate-2.2.1.jar
+remote:        | Downloading: grails-resources-2.2.1.jar
+remote:        | Downloading: grails-spring-2.2.1.jar
+remote:        | Downloading: grails-web-2.2.1.jar
+remote:        | Downloading: grails-logging-2.2.1.jar
+remote:        | Downloading: grails-plugin-codecs-2.2.1.jar
+remote:        | Downloading: grails-plugin-controllers-2.2.1.jar
+remote:        | Downloading: grails-plugin-domain-class-2.2.1.jar
+remote:        | Downloading: grails-plugin-converters-2.2.1.jar
+remote:        | Downloading: grails-plugin-datasource-2.2.1.jar
+remote:        | Downloading: grails-plugin-filters-2.2.1.jar
+remote:        | Downloading: grails-plugin-gsp-2.2.1.jar
+remote:        | Downloading: grails-plugin-i18n-2.2.1.jar
+remote:        | Downloading: grails-plugin-log4j-2.2.1.jar
+remote:        | Downloading: grails-plugin-scaffolding-2.2.1.jar
+remote:        | Downloading: grails-plugin-services-2.2.1.jar
+remote:        | Downloading: grails-plugin-servlets-2.2.1.jar
+remote:        | Downloading: grails-plugin-mimetypes-2.2.1.jar
+remote:        | Downloading: grails-plugin-url-mappings-2.2.1.jar
+remote:        | Downloading: grails-plugin-validation-2.2.1.jar
+remote:        | Downloading: spring-core-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-aop-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-aspects-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-asm-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-beans-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-context-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-context-support-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-expression-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-jdbc-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-jms-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-orm-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-tx-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-web-3.1.4.RELEASE.jar
+remote:        | Downloading: spring-webmvc-3.1.4.RELEASE.jar
+remote:        | Downloading: grails-datastore-gorm-1.1.5.RELEASE.jar
+remote:        | Downloading: grails-datastore-core-1.1.5.RELEASE.jar
+remote:        | Downloading: grails-datastore-simple-1.1.5.RELEASE.jar
+remote:        | Downloading: aspectjweaver-1.6.10.jar
+remote:        | Downloading: aspectjrt-1.6.10.jar
+remote:        | Downloading: cglib-2.2.jar
+remote:        | Downloading: asm-3.1.jar
+remote:        | Downloading: commons-fileupload-1.2.2.jar
+remote:        | Downloading: oro-2.0.8.jar
+remote:        | Downloading: commons-dbcp-1.4.jar
+remote:        | Downloading: commons-pool-1.5.6.jar
+remote:        | Downloading: h2-1.3.164.jar
+remote:        | Downloading: jstl-1.1.2.jar
+remote:        | Downloading: xpp3_min-1.1.4c.jar
+remote:        | Downloading: ehcache-core-2.4.6.jar
+remote:        | Downloading: log4j-1.2.16.jar
+remote:        | Downloading: jul-to-slf4j-1.6.2.jar
+remote:        | Downloading: jquery-1.8.3.zip
+remote:        | Downloading: resources-1.1.6.zip
+remote:        | Downloading: database-migration-1.3.2.zip
+remote:        | Downloading: liquibase-core-2.0.5.jar
+remote:        | Downloading: junit-4.10.jar
+remote:        | Downloading: grails-plugin-testing-2.2.1.jar
+remote:        | Downloading: grails-test-2.2.1.jar
+remote:        | Downloading: spring-test-3.1.4.RELEASE.jar
+remote:        :: problems summary ::
+remote:        :::: WARNINGS
+remote:        		module not found: joda-time#joda-time;2.3
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/joda-time/joda-time/ivy-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/joda-time/joda-time/jars/joda-time-2.3.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/joda-time/joda-time/bundles/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/joda-time-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/joda-time-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/joda-time-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/joda-time-2.3.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-joda-time/tags/RELEASE_2.3/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  http://grails.org/plugins/grails-joda-time/tags/RELEASE_2.3/grails-joda-time-2.3.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /app/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.jar
+remote:        		module not found: org.grails.plugins#facebook-sdk;0.4.12
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/build_aa64ebdc/lib/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/facebook-sdk/ivy-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/facebook-sdk/jars/facebook-sdk-0.4.12.zip
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/facebook-sdk/bundles/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/facebook-sdk-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/facebook-sdk-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/facebook-sdk-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/facebook-sdk-0.4.12.zip
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-facebook-sdk/tags/RELEASE_0.4.12/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  http://grails.org/plugins/grails-facebook-sdk/tags/RELEASE_0.4.12/grails-facebook-sdk-0.4.12.zip
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /app/.m2/repository/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.zip
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.zip
+remote:        		module not found: org.grails.plugins#cache-headers;1.1.5
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cache-headers/ivy-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cache-headers/jars/cache-headers-1.1.5.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cache-headers/bundles/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cache-headers-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cache-headers-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cache-headers-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cache-headers-1.1.5.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-cache-headers/tags/RELEASE_1.1.5/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  http://grails.org/plugins/grails-cache-headers/tags/RELEASE_1.1.5/grails-cache-headers-1.1.5.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.jar
+remote:        		module not found: org.grails.plugins#cached-resources;1.0
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cached-resources/ivy-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cached-resources/jars/cached-resources-1.0.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cached-resources/bundles/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cached-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cached-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cached-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cached-resources-1.0.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-cached-resources/tags/RELEASE_1.0/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  http://grails.org/plugins/grails-cached-resources/tags/RELEASE_1.0/grails-cached-resources-1.0.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.jar
+remote:        		module not found: org.grails.plugins#zipped-resources;1.0
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/zipped-resources/ivy-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/zipped-resources/jars/zipped-resources-1.0.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/zipped-resources/bundles/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/zipped-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/zipped-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/zipped-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/zipped-resources-1.0.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-zipped-resources/tags/RELEASE_1.0/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  http://grails.org/plugins/grails-zipped-resources/tags/RELEASE_1.0/grails-zipped-resources-1.0.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.jar
+remote:        		module not found: org.grails.plugins#rest;0.7
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/rest/ivy-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/rest/jars/rest-0.7.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/rest/bundles/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/rest-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/rest-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/rest-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/rest-0.7.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-rest/tags/RELEASE_0.7/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  http://grails.org/plugins/grails-rest/tags/RELEASE_0.7/grails-rest-0.7.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/rest/0.7/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/rest/0.7/rest-0.7.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/rest/0.7/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/rest/0.7/rest-0.7.jar
+remote:        		module not found: org.grails.plugins#mongodb;1.2.0
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/mongodb/ivy-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/mongodb/jars/mongodb-1.2.0.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/mongodb/bundles/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/mongodb-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/mongodb-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/mongodb-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/mongodb-1.2.0.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-mongodb/tags/RELEASE_1.2.0/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  http://grails.org/plugins/grails-mongodb/tags/RELEASE_1.2.0/grails-mongodb-1.2.0.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.jar
+remote:        		module not found: org.grails.plugins#browser-detection;0.4.3
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/browser-detection/ivy-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/browser-detection/jars/browser-detection-0.4.3.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/browser-detection/bundles/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/browser-detection-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/browser-detection-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/browser-detection-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/browser-detection-0.4.3.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-browser-detection/tags/RELEASE_0.4.3/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  http://grails.org/plugins/grails-browser-detection/tags/RELEASE_0.4.3/grails-browser-detection-0.4.3.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.jar
+remote:        		::::::::::::::::::::::::::::::::::::::::::::::
+remote:        		::          UNRESOLVED DEPENDENCIES         ::
+remote:        		::::::::::::::::::::::::::::::::::::::::::::::
+remote:        		:: joda-time#joda-time;2.3: not found
+remote:        		:: org.grails.plugins#facebook-sdk;0.4.12: not found
+remote:        		:: org.grails.plugins#cache-headers;1.1.5: not found
+remote:        		:: org.grails.plugins#cached-resources;1.0: not found
+remote:        		:: org.grails.plugins#zipped-resources;1.0: not found
+remote:        		:: org.grails.plugins#rest;0.7: not found
+remote:        		:: org.grails.plugins#mongodb;1.2.0: not found
+remote:        		:: org.grails.plugins#browser-detection;0.4.3: not found
+remote:        		::::::::::::::::::::::::::::::::::::::::::::::
+remote:
+remote:        :::: ERRORS
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/jquery/1.8.3/jquery-1.8.3-sources.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/jquery/1.8.3/jquery-1.8.3-src.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/jquery/1.8.3/jquery-1.8.3-javadoc.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/resources/1.1.6/resources-1.1.6-sources.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/resources/1.1.6/resources-1.1.6-src.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/resources/1.1.6/resources-1.1.6-javadoc.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/database-migration/1.3.2/database-migration-1.3.2-sources.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/database-migration/1.3.2/database-migration-1.3.2-src.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/database-migration/1.3.2/database-migration-1.3.2-javadoc.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.zip
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/rest/0.7/rest-0.7.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/rest/0.7/rest-0.7.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.jar
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.pom
+remote:        	SERVER ERROR: HTTPS Required url=http://repo1.maven.org/maven2/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.jar
+remote:        :: problems summary ::
+remote:        :::: WARNINGS
+remote:        		module not found: joda-time#joda-time;2.3
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/joda-time/joda-time/ivy-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/joda-time/joda-time/jars/joda-time-2.3.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/joda-time/joda-time/bundles/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/joda-time-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/joda-time-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/joda-time-2.3.xml
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/joda-time-2.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/joda-time-2.3.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-joda-time/tags/RELEASE_2.3/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  http://grails.org/plugins/grails-joda-time/tags/RELEASE_2.3/grails-joda-time-2.3.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  /app/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.pom
+remote:        	  -- artifact joda-time#joda-time;2.3!joda-time.jar:
+remote:        	  http://repo1.maven.org/maven2/joda-time/joda-time/2.3/joda-time-2.3.jar
+remote:        		module not found: org.grails.plugins#facebook-sdk;0.4.12
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/build_aa64ebdc/lib/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/facebook-sdk/ivy-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/facebook-sdk/jars/facebook-sdk-0.4.12.zip
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/facebook-sdk/bundles/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/facebook-sdk-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/facebook-sdk-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/facebook-sdk-0.4.12.xml
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/facebook-sdk-0.4.12.zip
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/facebook-sdk-0.4.12.zip
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-facebook-sdk/tags/RELEASE_0.4.12/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  http://grails.org/plugins/grails-facebook-sdk/tags/RELEASE_0.4.12/grails-facebook-sdk-0.4.12.zip
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  /app/.m2/repository/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.zip
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.pom
+remote:        	  -- artifact org.grails.plugins#facebook-sdk;0.4.12!facebook-sdk.zip:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/facebook-sdk/0.4.12/facebook-sdk-0.4.12.zip
+remote:        		module not found: org.grails.plugins#cache-headers;1.1.5
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cache-headers/ivy-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cache-headers/jars/cache-headers-1.1.5.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cache-headers/bundles/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cache-headers-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cache-headers-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cache-headers-1.1.5.xml
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cache-headers-1.1.5.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cache-headers-1.1.5.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-cache-headers/tags/RELEASE_1.1.5/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  http://grails.org/plugins/grails-cache-headers/tags/RELEASE_1.1.5/grails-cache-headers-1.1.5.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.pom
+remote:        	  -- artifact org.grails.plugins#cache-headers;1.1.5!cache-headers.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cache-headers/1.1.5/cache-headers-1.1.5.jar
+remote:        		module not found: org.grails.plugins#cached-resources;1.0
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cached-resources/ivy-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cached-resources/jars/cached-resources-1.0.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/cached-resources/bundles/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cached-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cached-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cached-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/cached-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/cached-resources-1.0.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-cached-resources/tags/RELEASE_1.0/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  http://grails.org/plugins/grails-cached-resources/tags/RELEASE_1.0/grails-cached-resources-1.0.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#cached-resources;1.0!cached-resources.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/cached-resources/1.0/cached-resources-1.0.jar
+remote:        		module not found: org.grails.plugins#zipped-resources;1.0
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/zipped-resources/ivy-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/zipped-resources/jars/zipped-resources-1.0.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/zipped-resources/bundles/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/zipped-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/zipped-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/zipped-resources-1.0.xml
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/zipped-resources-1.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/zipped-resources-1.0.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-zipped-resources/tags/RELEASE_1.0/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  http://grails.org/plugins/grails-zipped-resources/tags/RELEASE_1.0/grails-zipped-resources-1.0.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.pom
+remote:        	  -- artifact org.grails.plugins#zipped-resources;1.0!zipped-resources.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/zipped-resources/1.0/zipped-resources-1.0.jar
+remote:        		module not found: org.grails.plugins#rest;0.7
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/rest/ivy-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/rest/jars/rest-0.7.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/rest/bundles/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/rest-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/rest-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/rest-0.7.xml
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/rest-0.7.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/rest-0.7.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-rest/tags/RELEASE_0.7/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  http://grails.org/plugins/grails-rest/tags/RELEASE_0.7/grails-rest-0.7.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/rest/0.7/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/rest/0.7/rest-0.7.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/rest/0.7/rest-0.7.pom
+remote:        	  -- artifact org.grails.plugins#rest;0.7!rest.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/rest/0.7/rest-0.7.jar
+remote:        		module not found: org.grails.plugins#mongodb;1.2.0
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/mongodb/ivy-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/mongodb/jars/mongodb-1.2.0.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/mongodb/bundles/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/mongodb-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/mongodb-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/mongodb-1.2.0.xml
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/mongodb-1.2.0.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/mongodb-1.2.0.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-mongodb/tags/RELEASE_1.2.0/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  http://grails.org/plugins/grails-mongodb/tags/RELEASE_1.2.0/grails-mongodb-1.2.0.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.pom
+remote:        	  -- artifact org.grails.plugins#mongodb;1.2.0!mongodb.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/mongodb/1.2.0/mongodb-1.2.0.jar
+remote:        		module not found: org.grails.plugins#browser-detection;0.4.3
+remote:        	==== grailsPlugins: tried
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/build_aa64ebdc/lib/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/browser-detection/ivy-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/browser-detection/jars/browser-detection-0.4.3.jar
+remote:        	  /tmp/codon/tmp/cache/.grails/lib/org.grails.plugins/browser-detection/bundles/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/browser-detection-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/src/libs/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/browser-detection-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/dist/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/browser-detection-0.4.3.xml
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /app/.grails/2.2.1/cached-installed-plugins/browser-detection-0.4.3.jar
+remote:        	==== grailsHome: tried
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /tmp/codon/tmp/cache/.grails/plugins/browser-detection-0.4.3.jar
+remote:        	==== grailsCentral: tried
+remote:        	  http://grails.org/plugins/grails-browser-detection/tags/RELEASE_0.4.3/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  http://grails.org/plugins/grails-browser-detection/tags/RELEASE_0.4.3/grails-browser-detection-0.4.3.jar
+remote:        	==== localMavenResolver: tried
+remote:        	  /app/.m2/repository/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  /app/.m2/repository/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.jar
+remote:        	==== mavenCentral: tried
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.pom
+remote:        	  -- artifact org.grails.plugins#browser-detection;0.4.3!browser-detection.jar:
+remote:        	  http://repo1.maven.org/maven2/org/grails/plugins/browser-detection/0.4.3/browser-detection-0.4.3.jar
+remote:        		::::::::::::::::::::::::::::::::::::::::::::::
+remote:        		::          UNRESOLVED DEPENDENCIES         ::
+remote:        		::::::::::::::::::::::::::::::::::::::::::::::
+remote:        		:: joda-time#joda-time;2.3: not found
+remote:        		:: org.grails.plugins#facebook-sdk;0.4.12: not found
+remote:        		:: org.grails.plugins#cache-headers;1.1.5: not found
+remote:        		:: org.grails.plugins#cached-resources;1.0: not found
+remote:        		:: org.grails.plugins#zipped-resources;1.0: not found
+remote:        		:: org.grails.plugins#rest;0.7: not found
+remote:        		:: org.grails.plugins#mongodb;1.2.0: not found
+remote:        		:: org.grails.plugins#browser-detection;0.4.3: not found
+remote:        		::::::::::::::::::::::::::::::::::::::::::::::
+remote:
+remote:        | Error Failed to resolve dependencies (Set log level to 'warn' in BuildConfig.groovy for more information):
+remote:
+remote:        - joda-time:joda-time:2.3
+remote:        - org.grails.plugins:facebook-sdk:0.4.12
+remote:        - org.grails.plugins:cache-headers:1.1.5
+remote:        - org.grails.plugins:cached-resources:1.0
+remote:        - org.grails.plugins:zipped-resources:1.0
+remote:        - org.grails.plugins:rest:0.7
+remote:        - org.grails.plugins:mongodb:1.2.0
+remote:        - org.grails.plugins:browser-detection:0.4.3
+remote:
+remote:
+remote:  !     ERROR: Failed to build app!
+remote:        We're sorry this build is failing! If you can't find the issue in application
+remote:        code, please submit a ticket so we can help: https://help.heroku.com
+remote:        You can also try reverting to our legacy Grails buildpack:
+remote:
+remote:          $ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-grails#legacy
+remote:
+remote:        Thanks,
+remote:        Heroku
+remote:
+remote:  !     Push rejected, failed to compile Grails app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !	Push rejected to emote-app.
+remote:
+To https://git.heroku.com/emote-app.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/emote-app.git'
